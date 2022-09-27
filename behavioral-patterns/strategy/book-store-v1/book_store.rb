@@ -10,6 +10,7 @@ class BookStore
     @books.push(book)
   end
 
+  # problema: este metodo es un clon del metodo filterByTitle
   def filterByAuthor(name)
     @books.each do |book|
       if book.author == name
@@ -17,7 +18,7 @@ class BookStore
       end
     end
   end
-  
+  # problema: este metodo es un clon del metodo filterByAuthor
   def filterByTitle(title)
     @books.each do |book|
       if book.title == title
@@ -25,5 +26,4 @@ class BookStore
       end
     end
   end
-  
 end
