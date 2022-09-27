@@ -20,6 +20,7 @@ class MusicPlayer
             @tracks[0].play()
         end
     end
+    # metodo generico que aplica cualquier estrategia de reproducción
     def playNext()
         if @tracks.length > 0
             @tracks[@current_index].stop()
@@ -27,7 +28,8 @@ class MusicPlayer
             @tracks[@current_index].play()
         end
     end
-
+    # comparado con la v1
+    # se delego la impresion a la clase Track para reducir acoplamiento
     def print()
         @tracks.each do |track|  
             track.print()

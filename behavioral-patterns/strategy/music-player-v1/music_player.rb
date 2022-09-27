@@ -19,6 +19,9 @@ class MusicPlayer
             @tracks[0].play()
         end
     end
+    
+    # para agregar una nueva estrategia de reproducción
+    # es necesario modificar el codigo de este metodo
     def playNext()
         if @tracks.length > 0
             @tracks[@current_index].stop()
@@ -31,9 +34,10 @@ class MusicPlayer
         end
     end
 
+    # este metodo esta muy acoplado a la clase Track
+    # un buen diseño es bajo acoplamiento, maxima cohesion
     def print()
         @tracks.each do |track|
-            
             if track.playing?
                 puts (track.title + ":" + track.duration.to_s).green
             else
