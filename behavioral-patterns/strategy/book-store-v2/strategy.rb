@@ -1,5 +1,8 @@
 
 class FilterStrategy
+    # al hacer un metodo abstracto
+    # las clases hijas estan obligadas a sobre escribir este metodo
+    # sino ruby arroja un error
     def check(book)
         raise NotImplementedError
     end

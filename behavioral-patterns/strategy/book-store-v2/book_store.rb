@@ -8,7 +8,7 @@ class BookStore
   def add(book)
     @books.push(book)
   end
-
+  # este metodo permite aplicar un filtro con diferentes estrategias
   def filter(strategy)
     @books.each do |book|
       if strategy.check(book)
