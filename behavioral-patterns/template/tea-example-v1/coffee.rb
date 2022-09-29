@@ -1,22 +1,11 @@
+require_relative 'beberage.rb'
 
-
-class Coffee
-  def prepareRecipe
-    boilWater
-    brewCoffeeGrinds
-    pourInCup
-    addSugarAndMilk
-  end
-  def boilWater
-    puts 'boiling water'
-  end
-  def brewCoffeeGrinds
+class Coffee < Beberage
+  def steepMainIngredient
     puts 'dripping coffee through filter'
   end
-  def pourInCup
-    puts 'Pouring in cup'
-  end
-  def addSugarAndMilk
+ 
+  def steepTooping
     puts 'adding sugar and milk'
   end
 end
