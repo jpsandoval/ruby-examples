@@ -1,29 +1,24 @@
-
-class Observable
-  
-  def initialize
-    @observers = []
-  end
-  def addObserver(obs)
-    @observers.push(obs)
-  end
-  def notifyAll()
-    @observers.each {
-      |obs|
-      obs.update(self)
-    }
-  end
-end
-
-class Counter < Observable
+class Counter 
   def initialize
     super
     @value = 0
+    @att1 = 2
+    @att2 = 3
+    @observers = []
   end
-  
+  def register(observer)
+    @observers.push(observer)
+  end
+
+  def notifyAll()
+    @observers.each do |obs|
+      obs.update(self)
+    end
+  end
+
   def increment
     @value = @value + 1
-    notifyAll
+    notifyAll()
   end
   
   def print
@@ -32,7 +27,7 @@ class Counter < Observable
   
   def decrement
     @value = @value - 1
-    notifyAll
+    notifyAll()
   end
 
   def value

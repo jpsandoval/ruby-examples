@@ -2,8 +2,8 @@ require_relative 'observers'
 require_relative 'observable'
 
 counter = Counter.new
-counter.addObserver(Logger.new)
-counter.addObserver(BoundaryController.new)
+#counter.register(Logger.new)
+counter.register(FixedObserver.new(3))
 
 counter.increment
 counter.increment
