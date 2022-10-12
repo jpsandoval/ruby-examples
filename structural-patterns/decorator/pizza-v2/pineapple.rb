@@ -3,10 +3,10 @@ require_relative 'topping'
 class Pineapple < PizzaTopping
 
   def print
-    super
+    @decoratedPizza.print
     puts 'pineapple'
   end
   def cost
-    super * 2
+    return @decoratedPizza.cost * 2
   end
 end
