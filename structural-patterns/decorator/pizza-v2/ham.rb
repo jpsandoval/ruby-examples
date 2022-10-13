@@ -8,7 +8,7 @@ class Ham < PizzaTopping
   end
   
   def cost
-    @decoratedPizza.cost + 5
+    return @decoratedPizza.cost + 5
   end
   
 end
