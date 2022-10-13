@@ -3,6 +3,6 @@ require_relative 'client'
 
 #str.gsub("subString", "")
 originalService= LoginService.new
-serviceAdaptado = LoginAdapter.new(originalService)
-client = ConsoleClient.new(serviceAdaptado)
+serviceProxy = LoginProxy.new(originalService)
+client = ConsoleClient.new(originalService)
 client.run

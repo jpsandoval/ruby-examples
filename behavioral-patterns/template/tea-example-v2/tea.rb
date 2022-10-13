@@ -1,22 +1,11 @@
-
+require_relative 'beberage.rb'
 
 class Tea
-  def prepareRecipe
-    boilWater
-    steepTeaBag
-    addLemon
-    pourInCup
-  end
-  def boilWater
-    puts 'boiling water'
-  end
-  def steepTeaBag
+  
+  def steepMainIngredient
     puts 'steeping tea'
   end
-  def addLemon
+  def steepTooping
     puts 'adding lemon'
-  end
-  def pourInCup
-    puts 'Pouring in cup'
   end
 end
