@@ -1,29 +1,14 @@
-require_relative 'cheese_pizza'
-require_relative 'clam_pizza'
-require_relative 'pepperoni_pizza'
-require_relative 'veggie_pizza'
+require_relative 'simple_pizza_factory'
+
 
 class PizzaStore
   
   def orderPizza(type)
-
-    if type == 'cheese'
-      pizza = CheesePizza.new
-    elsif type == 'pepperoni'
-      pizza = PepperoniPizza.new
-    elsif type == 'clam'
-      pizza = ClamPizza.new
-    elsif type == 'veggie'
-      pizza = VeggiePizza.new
-    elsif
-      raise NotSupportedPizza
-    end
-    
+    pizza = SimplePizzaFactory.new.create(type)
     pizza.prepare
     pizza.bake
     pizza.cut
     pizza.box
-    
     pizza
   end
 end
