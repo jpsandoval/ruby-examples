@@ -2,7 +2,7 @@ require_relative 'chicago_pizza_store'
 require_relative 'ny_pizza_store'
 
 
-storefactory = ChicagoPizzaStore
+storefactory = NYPizzaStore
 
 store = storefactory.new
 pizza = store.orderPizza('cheese')
