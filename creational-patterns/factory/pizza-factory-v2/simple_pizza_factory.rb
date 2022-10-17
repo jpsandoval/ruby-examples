@@ -4,7 +4,8 @@ require_relative 'pepperoni_pizza'
 require_relative 'veggie_pizza'
 
 class SimplePizzaFactory
-
+  # un factory method
+  # es un metodo que normalmente crea las clases dentro de una jerarquia
   def create(type)
     if type == 'cheese'
       pizza = CheesePizza.new

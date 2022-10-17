@@ -1,23 +1,18 @@
-class Observable
-  def initialize
-    @observers=[]
-  end
-  def register(observer)
-    @observers.push(observer)
-  end
-
-  def notifyAll()
-    @observers.each do |obs|
-      obs.update(self)
-    end
-  end
-end
-
-class Battery < Observable
+class Battery
   def initialize
     super
     @carga = 100 # 100 % de carga
     @tiempo = 60 # 60 minutos restantes
+    @observers = []
+  end
+  def add(obs)
+    @observers.push(obs)
+  end
+  #se llama al metodo notify all normalmente cuando el objeto cambia de estado
+  def notifyAll()
+    @observers.each do |obs|
+      obs.update(self)
+    end
   end
 
   def consume(voltios)
@@ -27,6 +22,6 @@ class Battery < Observable
     notifyAll()
   end
   def carga
-    @carga
+    return @carga
   end
 end
