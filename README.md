@@ -1,1 +1,1 @@
-# ruby-examples
+# Ejemplos - patrones de diseño en ruby
