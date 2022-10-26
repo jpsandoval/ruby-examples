@@ -9,6 +9,8 @@ class BookStore
     @books.push(book)
   end
   # este metodo permite aplicar un filtro con diferentes estrategias
+  # a diferencia de la v1, tenemos un metodo de filtrado generico
+  # funciona con cualquier estrategia de filtro
   def filter(strategy)
     @books.each do |book|
       if strategy.check(book)

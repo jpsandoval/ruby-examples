@@ -11,7 +11,8 @@ class MusicPlayer
     def add(track)
         @tracks.push(track)
     end
-
+    # permite cambiar la estrategia de reproducción en tiempo de ejecucion
+    # osea mientras el programa se esta ejecutando
     def strategy=(name)
         @strategy = name
     end
@@ -21,6 +22,7 @@ class MusicPlayer
         end
     end
     # metodo generico que aplica cualquier estrategia de reproducción
+    # la complejidad del metodo tambien reduco, hay muchos menos ifs
     def playNext()
         if @tracks.length > 0
             @tracks[@current_index].stop()

@@ -7,9 +7,15 @@ end
 
 
 class ScoreImprover
+    # este metodo es un template-metodo
+    # porque tiene un pedaso faltante
+    # el metodo measure-difference es abstract (no existe en esta clase)
     def improve(students)
+        # paso 1: medir la diferencia
         diff = measureDifference(students)
+        # paso 2: sumar a todos la diferencia
         sumAll(diff)
+        # el metodo plantilla encapsula un algoritmo, donde uno o mas de sus pasos llama a un método abstracto
     end
     def sumAll(diff)
         students.each do |student|
@@ -23,6 +29,7 @@ end
 
 
 class Improve7 < ScoreImprover
+    # las clases hijas definen el paso faltante de la plantilla
     def measureDifference(students)
         maxScore = 1
         students.each do |student|
@@ -35,6 +42,9 @@ class Improve7 < ScoreImprover
     end
 end
 
+# el metodo plantilla nos permite re-utilizar los varios pasos
+# ya que solo tenemos que agregra la plantilla el paso faltante
+# el paso faltante varia dependiendo de la clase hija
 class Improve4 < ScoreImprover
     def measureDifference(students)
         minScore = 7

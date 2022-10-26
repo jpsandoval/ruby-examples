@@ -1,6 +1,9 @@
 
-
+# esta clase tiene codigo duplicado
+# con la clase tea
 class Coffee
+  # este metodo en particular es parecido al de la clase Tea
+  # con excepcion de un par de pasos 
   def prepareRecipe
     boilWater
     brewCoffeeGrinds

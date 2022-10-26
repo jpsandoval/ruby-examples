@@ -3,7 +3,7 @@ require_relative 'chicago_pizza'
 
 
 class ChicagoPizzaStore < PizzaStore
-
+  # crea objetos de una familia (de una misma jerarquia)
   def create(type)
     if type == 'cheese'
       pizza = ChicagoCheesePizza.new
