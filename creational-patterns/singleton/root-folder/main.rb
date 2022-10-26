@@ -4,12 +4,16 @@ class MainFolder
   def initialize
     @name = "root"
   end
+  
   def self.instance
     if @instance == nil
       @instance = new
     end
-    @instance
+    return @instance
   end
 end
 
-MainFolder.instance
+folder = MainFolder.instance
+
+
+#MainFolder.instance
